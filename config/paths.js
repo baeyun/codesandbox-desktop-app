@@ -20,9 +20,7 @@ function resolveApp(relativePath) {
   return path.resolve(relativePath);
 }
 
-const coreApp = path.normalize(
-  __dirname + '../../../app'
-);
+const coreApp = path.normalize(__dirname + '../../../app');
 const coreAppSrc = path.join(coreApp, 'src');
 const src = resolveApp('src');
 const common = path.resolve('../common');

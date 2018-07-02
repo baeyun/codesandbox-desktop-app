@@ -11,9 +11,9 @@ import 'normalize.css';
 import 'common/global.css';
 import theme from 'common/theme';
 import { Provider } from 'mobx-react';
-import controller from '../../../app/src/app/controller';
+import controller from './controller';
 
-import App from '../../../app/src/app/pages/index';
+import App from './pages/index';
 import '../../../app/src/app/split-pane.css';
 import logError from '../../../app/src/app/utils/error';
 

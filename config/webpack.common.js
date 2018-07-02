@@ -222,7 +222,7 @@ module.exports = {
       // A special case for favicon.ico to place it into build root directory.
       {
         test: /\/favicon.ico$/,
-        include: [paths.src],
+        include: [paths.coreAppSrc],
         loader: 'file-loader',
         options: {
           name: 'favicon.ico?[hash:8]',

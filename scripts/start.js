@@ -1,6 +1,7 @@
 /* eslint-disable */
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
+var { exec } = require('child_process');
 var express = require('express');
 var cors = require('cors');
 var chalk = require('chalk');
@@ -14,6 +15,20 @@ var proxy = require('http-proxy-middleware');
 var httpProxy = require('http-proxy');
 var config = require('../config/webpack.dev');
 var paths = require('../config/paths');
+
+// Run and build desktop-app
+var DESKTOP_APP_RUNNING = false;
+function runDesktopApp() {
+  exec('yarn electron .', (err, stdout, stderr) => {
+    if (err) {
+      console.log(chalk.red('Desktop app build failed: ') + stderr);
+      return;
+    }
+
+    // Desktop app build successful
+    console.log(stdout);
+  });
+}
 
 // Tools like Cloud9 rely on this.
 var DEFAULT_PORT = process.env.PORT || 3000;
@@ -86,6 +101,22 @@ function setupCompiler(port, protocol) {
         'To create a production build, use ' + chalk.cyan('npm run build') + '.'
       );
       console.log();
+
+      // Run desktop-app if 'start:desktop' is run
+      if (process.env.RUN_DESKTOP_APP) {
+        console.log();
+        console.log('  ' + chalk.cyan('Running desktop-app...'));
+
+        if (!DESKTOP_APP_RUNNING) {
+          runDesktopApp();
+
+          DESKTOP_APP_RUNNING = true;
+        } else {
+          // @todo force refresh the app
+          // console.log(chalk.cyan('Refreshed desktop-app...'));
+        }
+      }
+
       return;
     }
 
