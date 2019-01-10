@@ -4,4 +4,8 @@ This is a Codesandbox desktop client app that I'm developing. It's experimental 
 
 ## Demo video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nZNQQ-A_6UY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center">
+  <a href="https://www.youtube.com/embed/nZNQQ-A_6UY">
+    <img src="https://img.youtube.com/vi/nZNQQ-A_6UY/0.jpg">
+  </a>
+</p>
