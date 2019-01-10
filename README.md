@@ -7,7 +7,7 @@ Follow me on Twitter <a href="https://twitter.com/bukharim96/">@bukharim96</a> f
 ## Checkout my demo video
 
 <p align="center">
-  <a href="https://www.youtube.com/embed/nZNQQ-A_6UY" target="_blank">
+  <a href="https://www.youtube.com/watch?v=nZNQQ-A_6UY" target="_blank" rel="noopener">
     <img src="https://raw.githubusercontent.com/bukharim96/codesandbox-desktop-app/master/resources/codesandbox-desktop-youtube-thumb.jpg">
   </a>
 </p>
